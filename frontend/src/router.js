@@ -5,8 +5,8 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import ReservationReservationManager from "./components/listers/ReservationReservationCards"
-import ReservationReservationDetail from "./components/listers/ReservationReservationDetail"
+import ReservationReserveManager from "./components/listers/ReservationReserveCards"
+import ReservationReserveDetail from "./components/listers/ReservationReserveDetail"
 
 import TicketTicketManager from "./components/listers/TicketTicketCards"
 import TicketTicketDetail from "./components/listers/TicketTicketDetail"
@@ -17,14 +17,14 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/reservations/reservations',
-                name: 'ReservationReservationManager',
-                component: ReservationReservationManager
+                path: '/reservations/reserves',
+                name: 'ReservationReserveManager',
+                component: ReservationReserveManager
             },
             {
-                path: '/reservations/reservations/:id',
-                name: 'ReservationReservationDetail',
-                component: ReservationReservationDetail
+                path: '/reservations/reserves/:id',
+                name: 'ReservationReserveDetail',
+                component: ReservationReserveDetail
             },
 
             {

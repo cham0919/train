@@ -12,7 +12,7 @@ spring:
         - id: reservation
           uri: http://localhost:8082
           predicates:
-            - Path=/reservations/**, 
+            - Path=/reserves/**, 
         - id: ticket
           uri: http://localhost:8083
           predicates:
@@ -44,7 +44,7 @@ spring:
         - id: reservation
           uri: http://reservation:8080
           predicates:
-            - Path=/reservations/**, 
+            - Path=/reserves/**, 
         - id: ticket
           uri: http://ticket:8080
           predicates:

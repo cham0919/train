@@ -9,17 +9,18 @@
         </template>
 
         <v-card-title v-if="value._links">
-            Ticket # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
+            Reserve # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
         </v-card-title >
         <v-card-title v-else>
-            Ticket
+            Reserve
         </v-card-title >        
 
         <v-card-text>
             <String label="Name" v-model="value.name" :editMode="editMode" :inputUI="''"/>
             <String label="Train" v-model="value.train" :editMode="editMode" :inputUI="''"/>
+            <String label="Time" v-model="value.time" :editMode="editMode" :inputUI="''"/>
+            <Number label="Cost" v-model="value.cost" :editMode="editMode" :inputUI="''"/>
             <String label="Seat" v-model="value.seat" :editMode="editMode" :inputUI="''"/>
-            <String label="Amount" v-model="value.amount" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>
@@ -38,14 +39,14 @@
                     text
                     @click="save"
                 >
-                    DecreaseTicket
+                    Reserve
                 </v-btn>
                 <v-btn
                     color="primary"
                     text
                     @click="save"
                 >
-                    AddTicket
+                    CancelReservation
                 </v-btn>
                 <v-btn
                     color="primary"
@@ -89,7 +90,7 @@
 
 
     export default {
-        name: 'TicketTicket',
+        name: 'ReservationReserve',
         components:{
         },
         props: {
@@ -144,7 +145,7 @@
 
                     if(!this.offline) {
                         if(this.isNew) {
-                            temp = await axios.post(axios.fixUrl('/tickets'), this.value)
+                            temp = await axios.post(axios.fixUrl('/reserves'), this.value)
                         } else {
                             temp = await axios.put(axios.fixUrl(this.value._links.self.href), this.value)
                         }

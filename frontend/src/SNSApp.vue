@@ -36,13 +36,13 @@
                 <v-list>
                     <v-list-item
                         class="px-2"
-                        key="reservations"
-                        to="/reservations/reservations"
+                        key="reserves"
+                        to="/reservations/reserves"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        Reservation
+                        Reserve
                     </v-list-item>
 
 
@@ -137,10 +137,10 @@ export default {
         ImageUrl: '',
         aggregate: [
             { 
-                title: 'Reservation', 
+                title: 'Reserve', 
                 description: '', 
-                key: 'reservations', 
-                route: '/reservations/reservations',
+                key: 'reserves', 
+                route: '/reservations/reserves',
                 ImageUrl: '',
             },
             { 

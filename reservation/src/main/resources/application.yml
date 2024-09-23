@@ -31,12 +31,12 @@ spring:
         event-in:
           group: reservation
 #<<< EDA / Topic Name
-          destination: untitled
+          destination: train
 #>>> EDA / Topic Name
           contentType: application/json
         event-out:
 #<<< EDA / Topic Name
-          destination: untitled
+          destination: train
 #>>> EDA / Topic Name
           contentType: application/json
 
@@ -48,6 +48,7 @@ logging:
 api:
   url: 
     ticket: localhost:8083 
+    reservation: localhost:8082 
     
 
 server:
@@ -79,14 +80,15 @@ spring:
       bindings:
         event-in:
           group: reservation
-          destination: untitled
+          destination: train
           contentType: application/json
         event-out:
-          destination: untitled
+          destination: train
           contentType: application/json
 
 api:
   url: 
     ticket: ticket:8080 
+    reservation: reservation:8080 
     
 
