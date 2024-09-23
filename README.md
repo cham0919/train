@@ -20,6 +20,8 @@ cd /bin
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
+- reservation
+- ticket
 
 
 ## Run API Gateway (Spring Gateway)
@@ -29,6 +31,14 @@ mvn spring-boot:run
 ```
 
 ## Test by API
+- reservation
+```
+ http :8088/reservations id="id" name="name" train="train" time="time" cost="cost" seat="seat" 
+```
+- ticket
+```
+ http :8088/tickets id="id" name="name" train="train" seat="seat" amount="amount" 
+```
 
 
 ## Run the frontend

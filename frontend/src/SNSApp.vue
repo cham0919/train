@@ -34,6 +34,30 @@
 
             <v-navigation-drawer app clipped flat v-model="sideBar">
                 <v-list>
+                    <v-list-item
+                        class="px-2"
+                        key="reservations"
+                        to="/reservations/reservations"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Reservation
+                    </v-list-item>
+
+
+                    <v-list-item
+                        class="px-2"
+                        key="tickets"
+                        to="/tickets/tickets"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Ticket
+                    </v-list-item>
+
+
                 </v-list>
             </v-navigation-drawer>
         </div>
@@ -112,6 +136,20 @@ export default {
         flipped: [],
         ImageUrl: '',
         aggregate: [
+            { 
+                title: 'Reservation', 
+                description: '', 
+                key: 'reservations', 
+                route: '/reservations/reservations',
+                ImageUrl: '',
+            },
+            { 
+                title: 'Ticket', 
+                description: '', 
+                key: 'tickets', 
+                route: '/tickets/tickets',
+                ImageUrl: '',
+            },
             
         ],
     }),

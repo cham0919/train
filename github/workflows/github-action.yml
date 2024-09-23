@@ -29,4 +29,26 @@ jobs:
       
       - name: Build Maven Projects
         run: |
+          mvn clean package -f ./reservation/pom.xml
+          mvn clean package -f ./ticket/pom.xml
 
+      - name: Docker Build and push for Reservation
+        uses: docker/build-push-action@v4
+        with:
+          context: ./reservation
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/reservation:latest
+            ghcr.io/${{ github.repository }}/reservation:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Ticket
+        uses: docker/build-push-action@v4
+        with:
+          context: ./ticket
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/ticket:latest
+            ghcr.io/${{ github.repository }}/ticket:${{ github.ref_name }}
+            
